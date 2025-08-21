@@ -1,0 +1,54 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Auphonic API",
+  "description": "REST API for automated audio post-production including loudness normalization, noise reduction, and intelligent audio processing for podcasts and audio content",
+  "folders": [
+    "docs/api",
+    "help/api",
+    "documentation/api"
+  ],
+  "excludeFolders": [
+    "src",
+    "source",
+    "build",
+    "dist",
+    "node_modules",
+    "examples/deprecated",
+    "tests",
+    "test"
+  ],
+  "excludeFiles": [
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md"
+  ],
+  "rules": [
+    "Always use Bearer token authentication with API key for security",
+    "Use multipart/form-data for file uploads with @ prefix for local files in curl",
+    "Reference existing presets by UUID for consistent audio processing settings",
+    "Set action parameter to 'start' for immediate processing or 'save' for draft",
+    "Use Simple API for batch processing and shell scripts, JSON API for full control",
+    "Include proper Content-Type headers when sending JSON data (application/json)",
+    "Handle webhook responses for production status updates",
+    "Validate audio file formats before upload (MP3, WAV, M4A, FLAC, etc.)",
+    "Use loudnesstarget parameter between -13 to -31 LUFS for different standards",
+    "For JSON API, create production first, then upload files, then start processing",
+    "Use UUID format for all resource references (22 characters from [a-zA-Z0-9])",
+    "Chapter start times must be relative to main input file, not including intro length",
+    "For external services, reference service UUID and filename in input_file parameter",
+    "Set review_before_publishing to true for manual approval before file transfers",
+    "Use multi_input_files array for intros, outros, and audio inserts with offsets",
+    "For multitrack productions, set is_multitrack to true and use type: multitrack for each track",
+    "Each multitrack track requires unique id parameter for file upload identification",
+    "Use OAuth 2.0 for third-party apps, API key auth for personal scripts and integrations",
+    "Webhooks receive POST callbacks with uuid, status_string, and status parameters",
+    "For external service integration, use JWT-encoded webhooks with client_secret verification"
+  ],
+  "previousVersions": [
+    {
+      "tag": "v2024.1",
+      "title": "API Version 2024.1"
+    }
+  ]
+}
