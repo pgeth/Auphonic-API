@@ -1,3 +1,4 @@
+Документация для MCP. https://context7.com/pgeth/auphonic-api
 # Auphonic API Documentation - Complete Reference
 
 ## Table of Contents
